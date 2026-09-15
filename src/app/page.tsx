@@ -1,69 +1,226 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsStrip from "@/components/StatsStrip";
+import SolutionsSection from "@/components/SolutionsSection";
+import TechFeatures from "@/components/TechFeatures";
+import SpeedTestSimulator from "@/components/SpeedTestSimulator";
+import PricingSection from "@/components/PricingSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
+import CoverageModal from "@/components/CoverageModal";
+import { SolutionItem } from "@/lib/data";
+import { Wifi, Phone, MapPin, Mail, ArrowUp } from "lucide-react";
 
 export default function Home() {
+  const [coverageOpen, setCoverageOpen] = useState(false);
+
+  const handleOpenCoverage = () => {
+    setCoverageOpen(true);
+  };
+
+  const handleContactWhatsApp = (message?: string) => {
+    const defaultMsg =
+      message ||
+      "Hello Samitech Networks, I would like to get started with Starlink Internet.";
+    const url = `https://wa.me/237674137259?text=${encodeURIComponent(defaultMsg)}`;
+    window.open(url, "_blank");
+  };
+
+  const handleSelectSolution = (solution: SolutionItem) => {
+    handleContactWhatsApp(
+      `Hello Samitech Networks, I am interested in the ${solution.title} (${solution.badge}) package for my facility.`
+    );
+  };
+
+  const handleSelectPlan = (planName: string) => {
+    handleContactWhatsApp(
+      `Hello Samitech Networks, I would like to inquire about the ${planName} plan.`
+    );
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-[#0B0F17] text-white flex flex-col selection:bg-[#0088FF] selection:text-white">
+      {/* Top Navigation */}
+      <Navbar
+        onOpenCoverage={handleOpenCoverage}
+        onOpenContact={() => handleContactWhatsApp()}
+      />
+
+      <main className="flex-1">
+        {/* 1. Hero Section */}
+        <HeroSection
+          onOpenCoverage={handleOpenCoverage}
+          onOpenContact={() => handleContactWhatsApp()}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* 2. Real-Time Stats Strip */}
+        <StatsStrip />
+
+        {/* 3. Solutions by Living Space (Hostels, Rooms, Apartments) */}
+        <SolutionsSection onSelectSolution={handleSelectSolution} />
+
+        {/* 4. Technology Features & Specs */}
+        <TechFeatures />
+
+        {/* 5. Live Interactive Speed Test Simulator */}
+        <SpeedTestSimulator />
+
+        {/* 6. Pricing & Deployment Tiers */}
+        <PricingSection onSelectPlan={handleSelectPlan} />
+
+        {/* 7. Testimonials & Social Proof */}
+        <TestimonialsSection />
+
+        {/* 8. FAQ Accordion */}
+        <FAQSection />
+
+        {/* 9. Contact / WhatsApp CTA Strip */}
+        <WhatsAppWidget />
       </main>
+
+      {/* Footer */}
+      <footer className="bg-[#080C13] border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-12 text-gray-400">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+          {/* Col 1: Brand Info */}
+          <div className="md:col-span-1 space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] to-[#E63946] p-[1.5px] flex items-center justify-center">
+                <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
+                  <Wifi className="w-4 h-4 text-[#0088FF]" />
+                </div>
+              </div>
+              <span className="font-extrabold text-base tracking-wider text-white">
+                SAMITECH NETWORKS
+              </span>
+            </div>
+            <p className="text-xs leading-relaxed text-gray-400">
+              Cameroon&apos;s premier certified Starlink installer and high-speed satellite
+              mesh networking provider for student hostels, rooms, and residences.
+            </p>
+            <div className="text-xs text-gray-300 font-semibold">
+              Authorized Starlink Deployment Partner
+            </div>
+          </div>
+
+          {/* Col 2: Quick Links */}
+          <div className="space-y-3">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <a href="#" className="hover:text-white transition-colors">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-white transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
+                  Solutions &amp; Services
+                </a>
+              </li>
+              <li>
+                <a href="#features" className="hover:text-white transition-colors">
+                  Technology Specs
+                </a>
+              </li>
+              <li>
+                <a href="#pricing" className="hover:text-white transition-colors">
+                  Pricing Plans
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 3: Deployments */}
+          <div className="space-y-3">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+              Deployments
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <span className="text-gray-300">University Student Hostels</span>
+              </li>
+              <li>
+                <span className="text-gray-300">Single Rooms &amp; Studios</span>
+              </li>
+              <li>
+                <span className="text-gray-300">Residential Apartments</span>
+              </li>
+              <li>
+                <span className="text-gray-300">Campus Tech Hubs &amp; Coworking</span>
+              </li>
+              <li>
+                <span className="text-gray-300">Commercial Multi-Floor Mesh</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Contact & Support */}
+          <div className="space-y-3">
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+              Direct Contact
+            </h4>
+            <div className="space-y-2 text-xs">
+              <div className="flex items-center gap-2 text-gray-300">
+                <Phone className="w-4 h-4 text-[#0088FF]" />
+                <span>+237 674 137 259</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Mail className="w-4 h-4 text-[#E63946]" />
+                <span>support@samitech.network</span>
+              </div>
+              <div className="flex items-start gap-2 text-gray-300">
+                <MapPin className="w-4 h-4 text-[#0088FF] shrink-0 mt-0.5" />
+                <span>Molyko Buea / Douala / Yaoundé, Cameroon</span>
+              </div>
+            </div>
+            <button
+              onClick={handleOpenCoverage}
+              className="mt-2 w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/15 text-white border border-white/10 transition-colors text-center"
+            >
+              Verify Regional Coverage
+            </button>
+          </div>
+        </div>
+
+        {/* Copyright & Legal */}
+        <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <p>
+            &copy; {new Date().getFullYear()} SAMITECH Corporation. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <span className="hover:text-gray-300 cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-gray-300 cursor-pointer">Terms of Service</span>
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors"
+              title="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </footer>
+
+      {/* Coverage Checker Modal */}
+      <CoverageModal
+        isOpen={coverageOpen}
+        onClose={() => setCoverageOpen(false)}
+      />
     </div>
   );
 }
+
