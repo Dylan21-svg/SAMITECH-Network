@@ -23,58 +23,25 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
   return (
     <header className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-12 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Brand Group (Left): Starlink Logo + Samitech Networks */}
-        <div className="flex items-center gap-3 sm:gap-4">
-          {/* Starlink Logo Icon */}
-          <div className="flex items-center gap-1.5 text-white">
-            <svg
-              className="w-7 h-7 fill-white"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Stylized Starlink Chevron / X */}
-              <path
-                d="M12 25 L88 75 M88 25 L12 75"
-                stroke="white"
-                strokeWidth="8"
-                strokeLinecap="round"
-              />
-              <path
-                d="M40 20 C 65 35, 75 55, 60 80"
-                stroke="#0088FF"
-                strokeWidth="4"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-            <span className="text-xs tracking-[0.25em] font-semibold text-gray-200 hidden sm:inline-block">
-              STARLINK
-            </span>
-          </div>
-
-          <div className="h-5 w-[1px] bg-white/20" />
-
-          {/* Samitech Networks Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#E63946] p-[1.5px] flex items-center justify-center shadow-lg">
-              <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
-                <Wifi className="w-4 h-4 text-[#0088FF]" />
-              </div>
+        {/* Brand Group (Left): Samitech Networks */}
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#E63946] p-[1.5px] flex items-center justify-center shadow-lg">
+            <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
+              <Wifi className="w-4 h-4 text-[#0088FF]" />
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1">
-                <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">
-                  SAMITECH
-                </span>
-                <span className="text-[10px] sm:text-xs font-semibold px-1.5 py-0.5 rounded bg-blue-500/10 text-[#0088FF] border border-blue-500/20">
-                  NETWORKS
-                </span>
-              </div>
-              <span className="text-[8px] text-gray-400 tracking-widest uppercase hidden md:inline-block">
-                Connecting The Future
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-1.5">
+              <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">
+                SAMITECH
+              </span>
+              <span className="text-[10px] sm:text-xs font-semibold px-1.5 py-0.5 rounded bg-blue-500/10 text-[#0088FF] border border-blue-500/20">
+                NETWORKS
               </span>
             </div>
+            <span className="text-[8px] text-gray-400 tracking-widest uppercase hidden md:inline-block">
+              Connecting The Future
+            </span>
           </div>
         </div>
 

@@ -19,7 +19,7 @@ export default function MarqueeBanner() {
   const displayItems = [...items, ...items];
 
   return (
-    <div className="relative z-20 w-full overflow-hidden bg-[#ff0a01] text-white py-3.5 sm:py-4 border-y border-black/15 shadow-[0_4px_25px_rgba(255,10,1,0.35)] select-none">
+    <div className="relative z-20 w-full overflow-hidden bg-[#8b0000] text-white py-3.5 sm:py-4 border-y border-black/20 shadow-[0_4px_25px_rgba(139,0,0,0.4)] select-none">
       <div className="animate-marquee items-center gap-8 whitespace-nowrap">
         {displayItems.map((item, idx) => {
           const Icon = item.icon;
