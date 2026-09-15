@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import MarqueeBanner from "@/components/MarqueeBanner";
 import StatsStrip from "@/components/StatsStrip";
 import SolutionsSection from "@/components/SolutionsSection";
 import TechFeatures from "@/components/TechFeatures";
@@ -61,7 +62,10 @@ export default function Home() {
           onOpenContact={() => handleContactWhatsApp()}
         />
 
-        {/* 2. Real-Time Stats Strip */}
+        {/* 2. Red Marquee Announcement Banner */}
+        <MarqueeBanner />
+
+        {/* 3. Real-Time Stats Strip */}
         <StatsStrip />
 
         {/* 3. Solutions by Living Space (Hostels, Rooms, Apartments) */}
