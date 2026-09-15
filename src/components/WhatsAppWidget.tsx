@@ -19,7 +19,7 @@ export default function WhatsAppWidget() {
           
           {/* Subtle background glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#0088FF]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#E63946]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#8b0000]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             

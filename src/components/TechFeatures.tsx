@@ -12,7 +12,7 @@ export default function TechFeatures() {
         "Positioned at ~550 km altitude (over 60× closer than traditional geostationary satellites), drastically reducing latency to under 25ms.",
     },
     {
-      icon: <CloudRain className="w-6 h-6 text-[#E63946]" />,
+      icon: <CloudRain className="w-6 h-6 text-[#8b0000]" />,
       title: "All-Weather Phased Array Antenna",
       description:
         "Electronic beam steering without mechanical gears. Integrated heating elements melt precipitation and pierce through dense rain squalls.",
@@ -24,7 +24,7 @@ export default function TechFeatures() {
         "Ultra-fast dual-band routing with beamforming technology. Easily connect 100+ laptops, smartphones, and smart TVs without packet loss.",
     },
     {
-      icon: <Gauge className="w-6 h-6 text-[#E63946]" />,
+      icon: <Gauge className="w-6 h-6 text-[#8b0000]" />,
       title: "Unthrottled Gigabit Transit",
       description:
         "Zero artificial throttling or restrictive FUP caps. Stream 4K/8K, upload heavy project repositories, and game online without throttling.",
@@ -36,7 +36,7 @@ export default function TechFeatures() {
         "Extendable node architecture custom-installed by Samitech certified technicians to penetrate concrete hostel and apartment walls.",
     },
     {
-      icon: <ShieldCheck className="w-6 h-6 text-[#E63946]" />,
+      icon: <ShieldCheck className="w-6 h-6 text-[#8b0000]" />,
       title: "24/7 Local Support & Maintenance",
       description:
         "Samitech Networks provides direct on-site assistance in Cameroon with fast technician dispatch and instant WhatsApp resolution.",

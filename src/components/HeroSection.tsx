@@ -50,7 +50,7 @@ export default function HeroSection({ onOpenCoverage, onOpenContact }: HeroSecti
               Starlink
             </span>{" "}
             <br />
-            <span className="text-[#E63946] inline-block drop-shadow-[0_0_24px_rgba(230,57,70,0.45)]">
+            <span className="text-[#8b0000] inline-block drop-shadow-[0_0_24px_rgba(139,0,0,0.5)]">
               Internet
             </span>
           </h1>

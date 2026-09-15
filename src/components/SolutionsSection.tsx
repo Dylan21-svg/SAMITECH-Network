@@ -50,7 +50,7 @@ export default function SolutionsSection({ onSelectSolution }: SolutionsSectionP
               {/* Popular Badge */}
               {item.popular && (
                 <div className="absolute top-4 right-4 z-20">
-                  <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#E63946] text-white uppercase tracking-wider shadow-md">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#8b0000] text-white uppercase tracking-wider shadow-md">
                     Recommended
                   </span>
                 </div>

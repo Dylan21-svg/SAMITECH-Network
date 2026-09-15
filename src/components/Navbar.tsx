@@ -25,7 +25,7 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Group (Left): Samitech Networks */}
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#E63946] p-[1.5px] flex items-center justify-center shadow-lg">
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#8b0000] p-[1.5px] flex items-center justify-center shadow-lg">
             <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
               <Wifi className="w-4 h-4 text-[#0088FF]" />
             </div>
@@ -81,7 +81,7 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
 
           <button
             onClick={onOpenContact}
-            className="px-5 py-2 rounded-full text-xs font-semibold bg-[#E63946] hover:bg-[#DC2626] text-white shadow-lg shadow-[#E63946]/25 transition-all duration-200 active:scale-95"
+            className="px-5 py-2 rounded-full text-xs font-semibold bg-[#8b0000] hover:bg-[#700000] text-white shadow-lg shadow-[#8b0000]/25 transition-all duration-200 active:scale-95"
           >
             Get Started
           </button>
@@ -91,7 +91,7 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
         <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={onOpenContact}
-            className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#E63946] text-white"
+            className="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#8b0000] text-white"
           >
             Get Started
           </button>

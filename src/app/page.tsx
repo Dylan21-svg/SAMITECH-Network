@@ -96,7 +96,7 @@ export default function Home() {
           {/* Col 1: Brand Info */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] to-[#E63946] p-[1.5px] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] to-[#8b0000] p-[1.5px] flex items-center justify-center">
                 <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
                   <Wifi className="w-4 h-4 text-[#0088FF]" />
                 </div>
@@ -183,7 +183,7 @@ export default function Home() {
                 <span>+237 674 137 259</span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <Mail className="w-4 h-4 text-[#E63946]" />
+                <Mail className="w-4 h-4 text-[#8b0000]" />
                 <span>support@samitech.network</span>
               </div>
               <div className="flex items-start gap-2 text-gray-300">

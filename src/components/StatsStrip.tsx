@@ -12,7 +12,7 @@ export default function StatsStrip() {
       sublabel: "Tested under peak load",
     },
     {
-      icon: <Activity className="w-5 h-5 text-[#E63946]" />,
+      icon: <Activity className="w-5 h-5 text-[#8b0000]" />,
       value: "< 25 ms",
       label: "Ultra-Low Latency",
       sublabel: "LEO satellite proximity",
@@ -24,7 +24,7 @@ export default function StatsStrip() {
       sublabel: "Weather-hardened signal",
     },
     {
-      icon: <Building2 className="w-5 h-5 text-[#E63946]" />,
+      icon: <Building2 className="w-5 h-5 text-[#8b0000]" />,
       value: "350+",
       label: "Connected Facilities & Rooms",
       sublabel: "Across student campuses",

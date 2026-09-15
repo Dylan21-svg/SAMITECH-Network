@@ -103,7 +103,7 @@ export default function SpeedTestSimulator() {
                 <defs>
                   <linearGradient id="gradient-speed" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#0088FF" />
-                    <stop offset="100%" stopColor="#E63946" />
+                    <stop offset="100%" stopColor="#8b0000" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -135,7 +135,7 @@ export default function SpeedTestSimulator() {
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center text-[#E63946]">
+                <div className="w-8 h-8 rounded-lg bg-[#8b0000]/15 flex items-center justify-center text-[#8b0000]">
                   <ArrowUp className="w-4 h-4" />
                 </div>
                 <div>

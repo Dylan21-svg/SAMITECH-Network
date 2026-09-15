@@ -15,9 +15,9 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#E63946]" />
-            <span className="text-xs font-semibold text-[#E63946] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#8b0000]" />
+            <span className="text-xs font-semibold text-[#8b0000] uppercase tracking-wider">
               Transparent Deployment Tiers
             </span>
           </div>
@@ -88,7 +88,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
                 onClick={() => onSelectPlan(plan.name)}
                 className={`w-full py-3.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all duration-200 active:scale-95 ${
                   plan.highlight
-                    ? "bg-[#E63946] hover:bg-[#DC2626] text-white shadow-lg shadow-[#E63946]/25"
+                    ? "bg-[#8b0000] hover:bg-[#700000] text-white shadow-lg shadow-[#8b0000]/25"
                     : "bg-white/10 hover:bg-white/15 text-white"
                 }`}
               >
