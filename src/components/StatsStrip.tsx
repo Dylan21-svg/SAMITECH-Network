@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Zap, ShieldCheck, Activity, Building2 } from "lucide-react";
+import { Zap, ShieldCheck, Activity, Building2, Radio, CheckCircle2 } from "lucide-react";
 
 export default function StatsStrip() {
   const stats = [
@@ -34,6 +34,39 @@ export default function StatsStrip() {
   return (
     <section className="relative z-10 px-4 sm:px-6 lg:px-12 py-10 border-y border-white/[0.06] bg-[#0E141F]/60 backdrop-blur-md">
       <div className="max-w-7xl mx-auto">
+        {/* Live Constellation Telemetry Bar */}
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 mb-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-lg">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <div className="text-xs sm:text-sm font-bold text-white tracking-wide flex items-center gap-2">
+              <Radio className="w-4 h-4 text-[#0088FF]" />
+              Live Starlink Constellation Link
+            </div>
+            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+              <CheckCircle2 className="w-3 h-3" /> Active
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">Download Speed:</span>
+              <span className="font-extrabold text-white">
+                240+ <span className="text-[#0088FF]">Mbps</span>
+              </span>
+            </div>
+            <div className="h-4 w-[1px] bg-white/15 hidden sm:block" />
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">Average Latency:</span>
+              <span className="font-extrabold text-white">
+                24 <span className="text-gray-300">ms</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((item, idx) => (
             <div
