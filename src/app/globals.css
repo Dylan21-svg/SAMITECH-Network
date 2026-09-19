@@ -20,6 +20,13 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 14px;
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 14.5px;
+  }
 }
 
 body {

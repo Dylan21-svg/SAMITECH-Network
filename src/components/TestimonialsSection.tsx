@@ -1,38 +1,50 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { TESTIMONIALS } from "@/lib/data";
 import { Star, Quote } from "lucide-react";
 
 export default function TestimonialsSection() {
   return (
-    <section id="about" className="relative z-10 py-20 px-4 sm:px-6 lg:px-12 bg-[#0B0F17]">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="relative z-10 py-12 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Starlink Background (star.png) - 100% Clear to the max */}
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none select-none">
+        <Image
+          src="/images/star.png"
+          alt="Starlink Network"
+          fill
+          priority
+          className="object-cover object-center contrast-[1.06] brightness-[1.02]"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto">
         
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4">
-            <span className="text-xs font-semibold text-[#0088FF] uppercase tracking-wider">
-              Verified Social Proof
+        <div className="flex flex-col items-center text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 mb-3 backdrop-blur-md shadow-md">
+            <span className="text-[11px] font-bold text-[#38BDF8] uppercase tracking-wider">
+              Verified Social Proof · About Us
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight max-w-2xl mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight max-w-2xl mb-2.5 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             Trusted By Hostels & Residents
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-200 max-w-lg leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-black/45 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
             See how Samitech Networks Starlink installations transformed daily student
             research, remote tech jobs, and family streaming.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {TESTIMONIALS.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-[#111827]/90 border border-white/10 hover:border-[#0088FF]/30 transition-all duration-300 flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-[#0B101D]/90 border border-white/15 backdrop-blur-xl hover:border-[#0088FF]/40 transition-all duration-300 flex flex-col justify-between shadow-2xl"
             >
               <div>
                 {/* 5 Stars */}
@@ -42,7 +54,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
 
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed italic mb-8">
+                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed italic mb-8">
                   "{item.quote}"
                 </p>
               </div>
@@ -56,7 +68,7 @@ export default function TestimonialsSection() {
                 />
                 <div>
                   <div className="text-xs font-bold text-white">{item.author}</div>
-                  <div className="text-[11px] text-gray-400">{item.role}</div>
+                  <div className="text-[11px] text-gray-300">{item.role}</div>
                 </div>
               </div>
             </div>

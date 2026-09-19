@@ -21,32 +21,32 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-12 py-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Brand Group (Left): Samitech Networks */}
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#8b0000] p-[1.5px] flex items-center justify-center shadow-lg">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#8b0000] p-[1.5px] flex items-center justify-center shadow-lg">
             <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
-              <Wifi className="w-4 h-4 text-[#0088FF]" />
+              <Wifi className="w-3.5 h-3.5 text-[#0088FF]" />
             </div>
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-sm sm:text-base tracking-wider text-white">
+              <span className="font-extrabold text-xs sm:text-sm tracking-wider text-white">
                 SAMITECH
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold px-1.5 py-0.5 rounded bg-blue-500/10 text-[#0088FF] border border-blue-500/20">
+              <span className="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.2 rounded bg-blue-500/10 text-[#0088FF] border border-blue-500/20">
                 NETWORKS
               </span>
             </div>
-            <span className="text-[8px] text-gray-400 tracking-widest uppercase hidden md:inline-block">
+            <span className="text-[7.5px] text-gray-400 tracking-widest uppercase hidden md:inline-block">
               Connecting The Future
             </span>
           </div>
         </div>
 
         {/* Center Pill Navigation (Exact Mockup Match) */}
-        <nav className="hidden lg:flex items-center bg-[#111827]/80 backdrop-blur-md px-1.5 py-1.5 rounded-full border border-white/10 shadow-inner">
+        <nav className="hidden lg:flex items-center bg-[#111827]/80 backdrop-blur-md px-1 py-1 rounded-full border border-white/10 shadow-inner">
           {navLinks.map((item) => {
             const isActive = activeTab === item.name;
             return (
@@ -54,7 +54,7 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
                 key={item.name}
                 href={item.href}
                 onClick={() => setActiveTab(item.name)}
-                className={`px-5 py-2 text-xs font-medium rounded-full transition-all duration-200 ${
+                className={`px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
                     ? "bg-[#0088FF] text-white shadow-md shadow-[#0088FF]/30"
                     : "text-gray-300 hover:text-white hover:bg-white/5"

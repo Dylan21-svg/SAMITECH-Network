@@ -32,52 +32,52 @@ export default function StatsStrip() {
   ];
 
   return (
-    <section className="relative z-10 px-4 sm:px-6 lg:px-12 py-10 border-y border-white/[0.06] bg-[#0E141F]/60 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 border-y border-white/[0.06] bg-[#0E141F]/60 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto">
         {/* Live Constellation Telemetry Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-4 mb-8 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-lg">
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-3 w-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 p-3 mb-5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-lg">
+          <div className="flex items-center gap-2.5">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
             </span>
             <div className="text-xs sm:text-sm font-bold text-white tracking-wide flex items-center gap-2">
-              <Radio className="w-4 h-4 text-[#0088FF]" />
+              <Radio className="w-3.5 h-3.5 text-[#0088FF]" />
               Live Starlink Constellation Link
             </div>
-            <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-              <CheckCircle2 className="w-3 h-3" /> Active
+            <span className="inline-flex items-center gap-1 text-[9px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+              <CheckCircle2 className="w-2.5 h-2.5" /> Active
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-xs sm:text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-gray-400">Download Speed:</span>
-              <span className="font-extrabold text-white">
+              <span className="text-gray-400 text-xs">Download Speed:</span>
+              <span className="font-extrabold text-white text-xs sm:text-sm">
                 240+ <span className="text-[#0088FF]">Mbps</span>
               </span>
             </div>
-            <div className="h-4 w-[1px] bg-white/15 hidden sm:block" />
+            <div className="h-3.5 w-[1px] bg-white/15 hidden sm:block" />
             <div className="flex items-center gap-2">
-              <span className="text-gray-400">Average Latency:</span>
-              <span className="font-extrabold text-white">
+              <span className="text-gray-400 text-xs">Average Latency:</span>
+              <span className="font-extrabold text-white text-xs sm:text-sm">
                 24 <span className="text-gray-300">ms</span>
               </span>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
           {stats.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center sm:items-start p-4 rounded-xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5"
+              className="flex flex-col items-center sm:items-start p-3 rounded-xl hover:bg-white/[0.02] transition-colors border border-transparent hover:border-white/5"
             >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="p-2 rounded-lg bg-white/5 border border-white/10">
+              <div className="flex items-center gap-2 mb-1.5">
+                <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
                   {item.icon}
                 </div>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                   {item.value}
                 </span>
               </div>

@@ -8,10 +8,10 @@ import StatsStrip from "@/components/StatsStrip";
 import SolutionsSection from "@/components/SolutionsSection";
 import TechFeatures from "@/components/TechFeatures";
 import SpeedTestSimulator from "@/components/SpeedTestSimulator";
-import PricingSection from "@/components/PricingSection";
+// PricingSection moved to /pricing page
 import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
+// FAQSection moved to /faq page
+// WhatsAppWidget moved to /contact page
 import CoverageModal from "@/components/CoverageModal";
 import { SolutionItem } from "@/lib/data";
 import { Wifi, Phone, MapPin, Mail, ArrowUp } from "lucide-react";
@@ -68,7 +68,7 @@ export default function Home() {
         {/* 3. Real-Time Stats Strip */}
         <StatsStrip />
 
-        {/* 3. Solutions by Living Space (Hostels, Rooms, Apartments) */}
+        {/* Begin colored background area */}
         <SolutionsSection onSelectSolution={handleSelectSolution} />
 
         {/* 4. Technology Features & Specs */}
@@ -78,21 +78,19 @@ export default function Home() {
         <SpeedTestSimulator />
 
         {/* 6. Pricing & Deployment Tiers */}
-        <PricingSection onSelectPlan={handleSelectPlan} />
+        {/* Pricing & Deployment Tiers moved to /pricing page */}
 
         {/* 7. Testimonials & Social Proof */}
         <TestimonialsSection />
 
-        {/* 8. FAQ Accordion */}
-        <FAQSection />
+        {/* 8. FAQ Accordion moved to /faq page */}
 
-        {/* 9. Contact / WhatsApp CTA Strip */}
-        <WhatsAppWidget />
+        {/* 9. Contact / WhatsApp CTA Strip moved to /contact page */}
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#080C13] border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-12 text-gray-400">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <footer className="bg-black border-t border-white/10 pt-10 pb-8 px-4 sm:px-6 lg:px-8 text-gray-400">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
           {/* Col 1: Brand Info */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-2">
@@ -105,11 +103,11 @@ export default function Home() {
                 SAMITECH NETWORKS
               </span>
             </div>
-            <p className="text-xs leading-relaxed text-gray-400">
+            <p className="text-xs leading-relaxed text-gray-300">
               Cameroon&apos;s premier certified Starlink installer and high-speed satellite
               mesh networking provider for student hostels, rooms, and residences.
             </p>
-            <div className="text-xs text-gray-300 font-semibold">
+            <div className="text-xs text-[#0088FF] font-semibold">
               Authorized Starlink Deployment Partner
             </div>
           </div>
@@ -121,27 +119,27 @@ export default function Home() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-white transition-colors">
+                <a href="#about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-white transition-colors">
+                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
                   Solutions &amp; Services
                 </a>
               </li>
               <li>
-                <a href="#features" className="hover:text-white transition-colors">
+                <a href="#features" className="text-gray-300 hover:text-white transition-colors">
                   Technology Specs
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-white transition-colors">
+                <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
                   Pricing Plans
                 </a>
               </li>
@@ -201,16 +199,16 @@ export default function Home() {
         </div>
 
         {/* Copyright & Legal */}
-        <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <div className="max-w-6xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
           <p>
             &copy; {new Date().getFullYear()} SAMITECH Corporation. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-gray-300 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-gray-300 cursor-pointer">Terms of Service</span>
+            <span className="hover:text-gray-200 cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-gray-200 cursor-pointer">Terms of Service</span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors"
               title="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

@@ -10,36 +10,36 @@ interface PricingSectionProps {
 
 export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
   return (
-    <section id="pricing" className="relative z-10 py-20 px-4 sm:px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="relative z-10 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-4">
+        <div className="flex flex-col items-center text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#8b0000]" />
-            <span className="text-xs font-semibold text-[#8b0000] uppercase tracking-wider">
+            <span className="text-[11px] font-semibold text-[#8b0000] uppercase tracking-wider">
               Transparent Deployment Tiers
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight max-w-2xl mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight max-w-2xl mb-2.5">
             Custom Plans For Every Living Space
           </h2>
 
-          <p className="text-sm sm:text-base text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-400 max-w-lg leading-relaxed">
             Whether you are splitting bills across an entire student hostel, outfitting a
             single studio, or equipping an entire residential flat.
           </p>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
           {PRICING_PLANS.map((plan, idx) => (
             <div
               key={idx}
-              className={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+              className={`rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.highlight
-                  ? "bg-[#111827] border-2 border-[#0088FF] shadow-2xl shadow-[#0088FF]/15 scale-[1.02]"
+                  ? "bg-[#111827] border-2 border-[#0088FF] shadow-2xl shadow-[#0088FF]/15 scale-[1.01]"
                   : "bg-[#0E141F] border border-white/10 hover:border-white/20"
               }`}
             >

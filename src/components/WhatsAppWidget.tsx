@@ -14,7 +14,7 @@ export default function WhatsAppWidget() {
   return (
     <>
       {/* 1. Large High-Visibility Banner (Derived directly from Flyer Image 2) */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-12 bg-gradient-to-r from-[#0B0F17] via-[#111827] to-[#0B0F17] border-t border-white/10">
+      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-12 bg-[#f5feff] border-t border-white/10">
         <div className="max-w-5xl mx-auto rounded-3xl p-6 sm:p-10 bg-gradient-to-br from-[#111827] via-[#141C2B] to-[#0D1522] border-2 border-[#0088FF]/40 shadow-2xl relative overflow-hidden">
           
           {/* Subtle background glow */}
