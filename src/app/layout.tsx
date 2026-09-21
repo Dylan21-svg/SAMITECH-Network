@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "SAMITECH Networks | Starlink High-Speed Satellite Internet in Cameroon",
   description:
     "Superfast, reliable Starlink satellite internet for student hostels, single rooms, and apartments in Cameroon. 220+ Mbps, low latency, professional mesh installation.",
+  icons: {
+    icon: "/images/netlogo.png",
+    shortcut: "/images/netlogo.png",
+    apple: "/images/netlogo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

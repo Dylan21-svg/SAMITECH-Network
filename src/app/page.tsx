@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MarqueeBanner from "@/components/MarqueeBanner";
@@ -93,16 +95,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
           {/* Col 1: Brand Info */}
           <div className="md:col-span-1 space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] to-[#8b0000] p-[1.5px] flex items-center justify-center">
-                <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
-                  <Wifi className="w-4 h-4 text-[#0088FF]" />
-                </div>
-              </div>
-              <span className="font-extrabold text-base tracking-wider text-white">
-                SAMITECH NETWORKS
-              </span>
-            </div>
+            <Link href="/" className="inline-block focus:outline-none">
+              <Image
+                src="/images/netlogo.png"
+                alt="SAMITECH Networks"
+                width={300}
+                height={117}
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
+            </Link>
             <p className="text-xs leading-relaxed text-gray-300">
               Cameroon&apos;s premier certified Starlink installer and high-speed satellite
               mesh networking provider for student hostels, rooms, and residences.

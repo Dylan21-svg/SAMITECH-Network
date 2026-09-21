@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { User, Menu, X, Phone, CheckCircle2, Wifi } from "lucide-react";
 
 interface NavbarProps {
@@ -13,37 +15,27 @@ export default function Navbar({ onOpenCoverage, onOpenContact }: NavbarProps) {
   const [activeTab, setActiveTab] = useState("Home");
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#about" },
-    { name: "Service", href: "#services" },
-    { name: "Feature", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/#about" },
+    { name: "Service", href: "/#services" },
+    { name: "Feature", href: "/#features" },
+    { name: "Pricing", href: "/pricing" },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {/* Brand Group (Left): Samitech Networks */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0088FF] via-[#111827] to-[#8b0000] p-[1.5px] flex items-center justify-center shadow-lg">
-            <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
-              <Wifi className="w-3.5 h-3.5 text-[#0088FF]" />
-            </div>
+        <Link href="/" className="flex items-center gap-2 group focus:outline-none">
+          <div className="relative h-12 sm:h-14 w-auto">
+            <Image
+              src="/images/netlogo.png"
+              alt="SAMITECH Networks"
+              fill
+              className="object-contain transition-transform duration-200 group-hover:scale-105"
+            />
           </div>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xs sm:text-sm tracking-wider text-white">
-                SAMITECH
-              </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold px-1.5 py-0.2 rounded bg-blue-500/10 text-[#0088FF] border border-blue-500/20">
-                NETWORKS
-              </span>
-            </div>
-            <span className="text-[7.5px] text-gray-400 tracking-widest uppercase hidden md:inline-block">
-              Connecting The Future
-            </span>
-          </div>
-        </div>
+        </Link>
 
         {/* Center Pill Navigation (Exact Mockup Match) */}
         <nav className="hidden lg:flex items-center bg-[#111827]/80 backdrop-blur-md px-1 py-1 rounded-full border border-white/10 shadow-inner">
