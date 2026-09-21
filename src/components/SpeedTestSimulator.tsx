@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Gauge, ArrowDown, ArrowUp, Zap, RotateCcw, CheckCircle2 } from "lucide-react";
+import React, { useState } from "react";
+import { ArrowDown, ArrowUp, Zap, RotateCcw, CheckCircle2 } from "lucide-react";
 
 export default function SpeedTestSimulator() {
   const [testing, setTesting] = useState(false);
@@ -40,44 +40,44 @@ export default function SpeedTestSimulator() {
   };
 
   return (
-    <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-transparent via-[#0D131F] to-transparent">
-      <div className="max-w-5xl mx-auto rounded-3xl p-6 sm:p-10 bg-[#111827]/80 border border-white/10 backdrop-blur-xl shadow-2xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <section className="relative z-10 py-8 sm:py-12 lg:py-16 px-3.5 sm:px-6 lg:px-12 bg-gradient-to-b from-transparent via-[#0D131F] to-transparent">
+      <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 bg-[#111827]/80 border border-white/10 backdrop-blur-xl shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           
           {/* Left Info */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#0088FF] text-xs font-semibold mb-4">
-              <Zap className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#0088FF] text-[10px] sm:text-xs font-semibold mb-3 sm:mb-4">
+              <Zap className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               <span>Live Starlink Benchmark</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight mb-2 sm:mb-3">
               Real-World Satellite Throughput
             </h3>
-            <p className="text-xs sm:text-sm text-gray-400 leading-relaxed mb-6">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-gray-400 leading-relaxed mb-4 sm:mb-6">
               Unlike congested cellular towers that crawl during evening rush hours,
               Samitech Networks delivers direct low-orbit beam connectivity with
               uncompromising gigabit-grade speed.
             </p>
 
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                <span className="text-xs text-gray-400">Regular 4G / Modems</span>
-                <span className="text-xs font-semibold text-rose-400">8 - 25 Mbps · 110ms</span>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                <span className="text-[11px] sm:text-xs text-gray-400">Regular 4G / Modems</span>
+                <span className="text-[11px] sm:text-xs font-semibold text-rose-400">8 - 25 Mbps · 110ms</span>
               </div>
-              <div className="flex items-center justify-between p-3 rounded-xl bg-[#0088FF]/10 border border-[#0088FF]/30">
-                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+              <div className="flex items-center justify-between p-2.5 sm:p-3 rounded-xl bg-[#0088FF]/10 border border-[#0088FF]/30">
+                <span className="text-[11px] sm:text-xs font-bold text-white flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#0088FF]" /> Samitech Starlink
                 </span>
-                <span className="text-xs font-bold text-[#0088FF]">180 - 250+ Mbps · 20ms</span>
+                <span className="text-[11px] sm:text-xs font-bold text-[#0088FF]">180 - 250+ Mbps · 20ms</span>
               </div>
             </div>
           </div>
 
           {/* Right Live Gauge / Meter */}
-          <div className="lg:col-span-7 flex flex-col items-center justify-center p-6 rounded-2xl bg-[#0B0F17]/90 border border-white/10">
+          <div className="lg:col-span-7 flex flex-col items-center justify-center p-4 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl bg-[#0B0F17]/90 border border-white/10">
             
             {/* Speed Readout Circle */}
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex flex-col items-center justify-center">
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 flex flex-col items-center justify-center">
               {/* Outer Circular SVG Track */}
               <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                 <circle

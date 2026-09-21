@@ -1,0 +1,6 @@
+{
+  "name": "SAMITECH Networks",
+  "description": "Starlink High-Speed Satellite Internet in Cameroon - Superfast, reliable Starlink satellite internet for student hostels, single rooms, and apartments in Cameroon.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

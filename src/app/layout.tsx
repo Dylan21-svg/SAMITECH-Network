@@ -18,7 +18,11 @@ export const metadata: Metadata = {
     "Superfast, reliable Starlink satellite internet for student hostels, single rooms, and apartments in Cameroon. 220+ Mbps, low latency, professional mesh installation.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
