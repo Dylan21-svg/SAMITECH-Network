@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @theme {
   --color-primary-blue: #0088FF;
@@ -22,13 +20,6 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 14px;
-}
-
-@media (min-width: 1536px) {
-  html {
-    font-size: 14.5px;
-  }
 }
 
 body {
