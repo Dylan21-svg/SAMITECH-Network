@@ -17,11 +17,11 @@ import {
 interface FeatureItem {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  badge: string;
-  highlight: boolean;
-  spec: string;
+  badge: string; // Top-left oval pill (e.g. "SPACEX ARCHITECTURE")
+  bigTitle: [string, string]; // Large stacked all-caps typography (e.g. ["LOW EARTH", "ORBIT MESH"])
+  tags: [string, string, string]; // Stacked micro-pill tags (e.g. ["LOW LATENCY", "6,000+ SATS", "< 25MS PING"])
   description: string;
+  spec: string;
   image: string;
   imageAlt: string;
 }
@@ -35,72 +35,72 @@ export default function TechFeatures() {
     {
       id: "leo",
       icon: Satellite,
-      title: "Low Earth Orbit (LEO) Constellation",
       badge: "SpaceX Architecture",
-      highlight: true,
-      spec: "< 25ms Latency",
+      bigTitle: ["LOW EARTH", "ORBIT MESH"],
+      tags: ["LOW LATENCY", "6,000+ SATELLITES", "< 25MS PING"],
       description:
-        "6,000+ satellites orbiting at ~550 km altitude, delivering sub-25ms latency with zero terrestrial cable bottlenecks.",
+        "Orbiting at ~550 km altitude for instant cloud and exam responsiveness, eliminating terrestrial undersea cable bottlenecks.",
+      spec: "< 25ms Latency",
       image: "/images/leo.png",
       imageAlt: "Starlink Low Earth Orbit satellite constellation",
     },
     {
       id: "antenna",
       icon: CloudRain,
-      title: "All-Weather Phased Array Antenna",
-      badge: "Tropical Weatherproof",
-      highlight: false,
-      spec: "IP54 Ruggedized",
+      badge: "Weatherproof Hardware",
+      bigTitle: ["PHASED ARRAY", "ANTENNA DISH"],
+      tags: ["SOLID STATE", "IP54 RUGGEDIZED", "THERMAL DEFROST"],
       description:
-        "Solid-state electronic beam steering with integrated thermal elements that pierce dense tropical Mount Fako rainstorms.",
+        "Solid-state electronic beam tracking with zero mechanical gears, engineered to pierce dense tropical Mount Fako rain squalls.",
+      spec: "IP54 Rugged",
       image: "/images/antenna.png",
       imageAlt: "Starlink phased array antenna dish terminal",
     },
     {
       id: "wifi6",
       icon: Cpu,
-      title: "Wi-Fi 6 High-Density Mesh",
-      badge: "High Capacity",
-      highlight: true,
-      spec: "100+ Devices",
+      badge: "Enterprise Routing",
+      bigTitle: ["WI-FI 6 HIGH", "DENSITY MESH"],
+      tags: ["TRI-BAND OFDMA", "WPA3 SECURITY", "100+ CLIENTS"],
       description:
-        "Intelligent OFDMA multi-user routing connecting 100+ student devices simultaneously without packet loss or hallway dead zones.",
+        "Intelligent multi-channel OFDMA distribution powering dozens of hostel student laptops simultaneously without packet drops.",
+      spec: "100+ Devices",
       image: "/images/wifi-6.png",
       imageAlt: "Wi-Fi 6 mesh router and access points",
     },
     {
       id: "transit",
       icon: Gauge,
-      title: "Unthrottled Gigabit Transit",
       badge: "Unlimited Pipeline",
-      highlight: false,
-      spec: "Uncapped Bandwidth",
+      bigTitle: ["UNTHROTTLED", "GIGABIT TRANSIT"],
+      tags: ["ZERO DATA CAPS", "280+ MBPS PEAK", "DIRECT ROUTING"],
       description:
-        "Direct SpaceX ground station routing with zero data caps, artificial speed throttling, or peak-hour congestion.",
+        "Direct SpaceX ground station routing with zero fair-use throttling, arbitrary speed caps, or peak-hour congestion.",
+      spec: "Uncapped Bandwidth",
       image: "/images/dish.png",
       imageAlt: "SpaceX Starlink dish hardware terminal kit",
     },
     {
       id: "multifloor",
       icon: Layers,
-      title: "Seamless Multi-Floor Coverage",
-      badge: "Concrete Penetration",
-      highlight: true,
-      spec: "Shielded Cat6",
+      badge: "Hostel Deployment",
+      bigTitle: ["MULTI-FLOOR", "CONCRETE MESH"],
+      tags: ["SHIELDED CAT6", "ZERO DEAD ZONES", "SOLID COPPER"],
       description:
-        "Shielded Cat6 solid copper backbone and synchronized corridor nodes engineered to penetrate dense concrete hostel walls.",
+        "Shielded Cat6 solid copper backbone and synchronized corridor nodes engineered to penetrate dense multi-story concrete walls.",
+      spec: "Shielded Cat6",
       image: "/images/multi-floor.png",
       imageAlt: "Multi-floor building mesh Wi-Fi network distribution layout",
     },
     {
       id: "support",
       icon: ShieldCheck,
-      title: "24/7 Local Support & Maintenance",
-      badge: "Buea Field Team",
-      highlight: false,
-      spec: "2-Hour Dispatch",
+      badge: "Regional Dispatch",
+      bigTitle: ["24/7 LOCAL", "BUEA SUPPORT"],
+      tags: ["LOCAL WAREHOUSE", "2-HOUR DISPATCH", "DIRECT WHATSAPP"],
       description:
-        "Certified Buea technicians, local spare parts inventory, and instant WhatsApp support with guaranteed 2-hour dispatch.",
+        "On-site Cameroon technicians, local spare parts inventory in Buea, and instant WhatsApp support for hostel wardens.",
+      spec: "2-Hour Dispatch",
       image: "/images/support.png",
       imageAlt: "Samitech certified technical engineer on site",
     },
@@ -156,11 +156,11 @@ export default function TechFeatures() {
   return (
     <section
       id="features"
-      className="relative z-10 py-7 sm:py-9 lg:py-12 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black text-white selection:bg-[#0088FF]/30"
+      className="relative z-10 py-8 sm:py-12 lg:py-16 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black text-white selection:bg-[#0088FF]/30"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-5 sm:mb-7">
+        <div className="flex flex-col items-center text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-2">
             <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#8b0000]" />
             <span className="text-[10px] sm:text-xs font-semibold text-[#8b0000] uppercase tracking-wider">
@@ -178,7 +178,7 @@ export default function TechFeatures() {
         </div>
 
         {/* Feature Tabs Bar for Quick Navigation */}
-        <div className="flex items-center justify-start md:justify-center overflow-x-auto scrollbar-none gap-2 mb-5 sm:mb-6 pb-1.5 -mx-3.5 px-3.5 md:mx-0 md:px-0">
+        <div className="flex items-center justify-start md:justify-center overflow-x-auto scrollbar-none gap-2 mb-6 sm:mb-8 pb-1.5 -mx-3.5 px-3.5 md:mx-0 md:px-0">
           {features.map((feat, idx) => {
             const Icon = feat.icon;
             const isActive = idx === currentIndex;
@@ -186,128 +186,178 @@ export default function TechFeatures() {
               <button
                 key={feat.id}
                 onClick={() => goToSlide(idx)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-200 shrink-0 cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold transition-all duration-300 shrink-0 cursor-pointer ${
                   isActive
-                    ? "bg-[#0088FF] text-white shadow-md shadow-[#0088FF]/30 border border-[#0088FF]"
-                    : "bg-white/[0.06] text-gray-300 hover:text-white hover:bg-white/[0.12] border border-white/10"
+                    ? "bg-[#0088FF] text-white shadow-lg shadow-[#0088FF]/40 border border-white/40 scale-105"
+                    : "bg-white/[0.05] text-gray-300 hover:text-white hover:bg-white/[0.1] border border-white/15"
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-gray-400"}`} />
-                <span className="whitespace-nowrap">{feat.title.split(" (")[0].split(" ")[0]}</span>
+                <span className="whitespace-nowrap">{feat.bigTitle[0]}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Horizontal Carousel Card Container */}
-        <div
-          className="relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 bg-white/[0.08] hover:bg-white/[0.11] border border-white/20 backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* Active Feature Slide Grid: Horizontal Landscape layout */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center">
-            
-            {/* Left Side: Essential Text (Title, Concise Description, and Spec) */}
-            <div className="md:col-span-7 flex flex-col justify-center order-1 text-left">
-              {/* Badge Row */}
-              <div className="flex items-center gap-2 mb-2.5">
-                <div className="w-6 h-6 rounded-full bg-red-500/15 border border-red-500/30 flex items-center justify-center shrink-0">
-                  <CurrentIcon className="w-3.5 h-3.5 text-red-400" />
-                </div>
-                <span
-                  className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
-                    current.highlight
-                      ? "bg-[#0088FF] text-white shadow-sm shadow-blue-500/25"
-                      : "bg-red-500/20 text-red-400 border border-red-500/30"
-                  }`}
-                >
+        {/* Glassmorphism Card Container (Styled after the uploaded reference template) */}
+        <div className="relative">
+          {/* Luminous fluid ambient glow behind the frosted glass plate */}
+          <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-blue-700/40 via-cyan-500/25 to-blue-900/40 rounded-[2.5rem] sm:rounded-[3.5rem] blur-3xl -z-10 pointer-events-none" />
+
+          {/* Frosted Glass Plate */}
+          <div
+            className="relative rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 bg-[#081225]/60 backdrop-blur-2xl border border-white/25 shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_25px_60px_-12px_rgba(0,119,255,0.35)] transition-all duration-500 overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Vertical Fluted / Ribbed Light Beams Texture */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-20"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 2px, transparent 2px, transparent 32px)",
+              }}
+            />
+
+            {/* Glowing Refracted Aurora Swirl inside the card */}
+            <div className="absolute right-0 top-0 bottom-0 w-3/5 bg-gradient-to-l from-blue-500/30 via-cyan-400/20 to-transparent blur-3xl pointer-events-none" />
+
+            {/* Header Row: Oval Pill Badge on Left, Asterisk Icon on Right */}
+            <div className="relative z-10 flex items-center justify-between mb-6 sm:mb-8">
+              {/* Oval Pill Badge */}
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/35 bg-white/[0.06] backdrop-blur-md shadow-sm">
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] uppercase text-white/90">
                   {current.badge}
                 </span>
               </div>
 
-              {/* Title */}
-              <h3 className="text-lg sm:text-xl md:text-2xl font-extrabold text-red-500 tracking-tight mb-2">
-                {current.title}
-              </h3>
-
-              {/* Reduced & Most Important Text */}
-              <p className="text-xs sm:text-sm text-blue-100/90 leading-relaxed mb-4">
-                {current.description}
-              </p>
-
-              {/* Key Metric Highlight */}
-              <div className="pt-3 border-t border-white/15 flex items-center justify-between">
-                <span className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider font-semibold">
-                  Standard Spec
-                </span>
-                <span className="text-xs sm:text-sm font-black text-[#0088FF]">
-                  {current.spec}
-                </span>
+              {/* 8-Point Geometric Asterisk Star (matches reference image) */}
+              <div className="flex items-center justify-center text-white/90">
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                >
+                  <line x1="12" y1="3" x2="12" y2="21" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="5.64" y1="5.64" x2="18.36" y2="18.36" />
+                  <line x1="5.64" y1="18.36" x2="18.36" y2="5.64" />
+                </svg>
               </div>
             </div>
 
-            {/* Right Side: Horizontal Image Representation */}
-            <div className="md:col-span-5 order-2">
-              <div className="relative w-full h-44 sm:h-52 md:h-56 lg:h-64 rounded-xl sm:rounded-2xl overflow-hidden bg-black/50 border border-white/20 shadow-xl flex items-center justify-center p-3 group">
-                {/* Subtle Ambient Radial Glow */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0088FF]/15 via-transparent to-red-500/10 pointer-events-none" />
+            {/* Horizontal Layout: Left Text side, Right Image side */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 items-center">
+              
+              {/* Left Side: Pill Tags, Large Stacked Title, and Concise Description */}
+              <div className="md:col-span-7 flex flex-col justify-between order-1 text-left">
                 
-                {/* Hardware Graphic */}
-                <div className="relative w-full h-full">
-                  <Image
-                    src={current.image}
-                    alt={current.imageAlt}
-                    fill
-                    className="object-contain p-1.5 transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                    priority
-                  />
+                {/* Stacked Pill Micro-Tags (matches reference template) */}
+                <div className="space-y-1.5 mb-4 sm:mb-5">
+                  <div className="flex">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 bg-white/[0.05] text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 backdrop-blur-sm">
+                      {current.tags[0]}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 bg-white/[0.05] text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 backdrop-blur-sm">
+                      {current.tags[1]}
+                    </span>
+                    <span className="inline-flex items-center px-3 py-1 rounded-full border border-white/30 bg-white/[0.05] text-[9px] sm:text-[10px] font-semibold tracking-wider uppercase text-white/90 backdrop-blur-sm">
+                      {current.tags[2]}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Big Bold Stacked All-Caps Title (matches "LUMINOUS GRADIENT" typography) */}
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight leading-[0.95] mb-3 sm:mb-4 drop-shadow-sm">
+                  <div className="text-white">{current.bigTitle[0]}</div>
+                  <div className="text-[#0088FF]">{current.bigTitle[1]}</div>
+                </h3>
+
+                {/* Concise Description Text */}
+                <p className="text-xs sm:text-sm text-blue-100/85 leading-relaxed max-w-md mb-4 sm:mb-5">
+                  {current.description}
+                </p>
+
+                {/* Bottom Metric Pill */}
+                <div className="flex items-center gap-2 pt-3 border-t border-white/15">
+                  <div className="w-5 h-5 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center shrink-0">
+                    <CurrentIcon className="w-3 h-3 text-red-400" />
+                  </div>
+                  <span className="text-[11px] sm:text-xs text-gray-300 font-medium">Standard Spec:</span>
+                  <span className="text-xs sm:text-sm font-black text-[#0088FF] tracking-wide">
+                    {current.spec}
+                  </span>
+                </div>
+
+              </div>
+
+              {/* Right Side: Floating Hardware Image with Luminous Cyan/Blue Aura */}
+              <div className="md:col-span-5 order-2">
+                <div className="relative w-full h-52 sm:h-60 md:h-64 lg:h-72 rounded-2xl sm:rounded-3xl overflow-hidden bg-black/40 border border-white/20 shadow-2xl flex items-center justify-center p-3 sm:p-4 group">
+                  {/* Internal Radial Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0088FF]/30 via-cyan-400/15 to-transparent pointer-events-none" />
+
+                  {/* Hardware Image */}
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={current.image}
+                      alt={current.imageAlt}
+                      fill
+                      className="object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
+            {/* Carousel Navigation Footer: Glass Dots & Subtle Control Arrows */}
+            <div className="relative z-10 mt-6 sm:mt-8 pt-4 border-t border-white/15 flex items-center justify-between">
+              {/* Dots Indicator */}
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {features.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => goToSlide(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`transition-all duration-300 rounded-full cursor-pointer ${
+                      idx === currentIndex
+                        ? "w-7 sm:w-8 h-2 bg-[#0088FF] shadow-md shadow-[#0088FF]/50 border border-white/40"
+                        : "w-2 h-2 bg-white/25 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
 
-          {/* Carousel Navigation Footer: Arrows + Dots */}
-          <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between">
-            {/* Dots Indicator */}
-            <div className="flex items-center gap-1.5">
-              {features.map((_, idx) => (
+              {/* Controls */}
+              <div className="flex items-center gap-2">
                 <button
-                  key={idx}
-                  onClick={() => goToSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    idx === currentIndex
-                      ? "w-6 h-2 bg-[#0088FF] shadow-sm shadow-[#0088FF]/40"
-                      : "w-2 h-2 bg-white/25 hover:bg-white/50"
-                  }`}
-                />
-              ))}
+                  onClick={prevSlide}
+                  aria-label="Previous feature"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/[0.08] hover:bg-white/[0.18] border border-white/25 text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={nextSlide}
+                  aria-label="Next feature"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0088FF] hover:bg-blue-600 border border-white/30 text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-md shadow-[#0088FF]/40"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
-            {/* Previous & Next Controls */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prevSlide}
-                aria-label="Previous feature"
-                className="w-8 h-8 rounded-full bg-white/[0.08] hover:bg-white/[0.16] border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-sm"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                aria-label="Next feature"
-                className="w-8 h-8 rounded-full bg-[#0088FF] hover:bg-blue-600 border border-[#0088FF] text-white flex items-center justify-center transition-all cursor-pointer active:scale-95 shadow-md shadow-[#0088FF]/30"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
-
         </div>
 
       </div>
