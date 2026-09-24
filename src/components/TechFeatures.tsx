@@ -17,9 +17,9 @@ import {
 interface FeatureItem {
   id: string;
   icon: React.ComponentType<{ className?: string }>;
-  badge: string; // Top-left oval pill (e.g. "SPACEX ARCHITECTURE")
-  bigTitle: [string, string]; // Large stacked all-caps typography (e.g. ["LOW EARTH", "ORBIT MESH"])
-  tags: [string, string, string]; // Stacked micro-pill tags (e.g. ["LOW LATENCY", "6,000+ SATS", "< 25MS PING"])
+  badge: string;
+  bigTitle: [string, string];
+  tags: [string, string, string];
   description: string;
   spec: string;
   image: string;
@@ -30,6 +30,7 @@ export default function TechFeatures() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const features: FeatureItem[] = [
     {
@@ -106,29 +107,33 @@ export default function TechFeatures() {
     },
   ];
 
-  const totalFeatures = features.length;
+  const total = features.length;
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % totalFeatures);
-  }, [totalFeatures]);
+    setCurrentIndex((prev) => (prev + 1) % total);
+  }, [total]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + totalFeatures) % totalFeatures);
-  }, [totalFeatures]);
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  }, [total]);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
-  // Autoplay functionality: switches to next after 10 seconds automatically
+  // Reliable Auto-Advance Timer: Automatically transitions smoothly every 6 seconds
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalFeatures);
-    }, 10000);
-    return () => clearInterval(timer);
-  }, [totalFeatures, currentIndex]);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % total);
+    }, 6000);
 
-  // Touch swipe support for mobile
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [total, currentIndex]);
+
+  // Touch swipe support for mobile devices
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -140,10 +145,9 @@ export default function TechFeatures() {
   const handleTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return;
     const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 45;
-    if (distance > minSwipeDistance) {
+    if (distance > 40) {
       nextSlide();
-    } else if (distance < -minSwipeDistance) {
+    } else if (distance < -40) {
       prevSlide();
     }
     touchStartX.current = null;
@@ -205,7 +209,7 @@ export default function TechFeatures() {
           <button
             onClick={prevSlide}
             aria-label="Previous card"
-            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#081225]/85 hover:bg-[#0088FF] border border-white/30 text-white items-center justify-center transition-all duration-300 cursor-pointer shadow-xl hover:scale-110 active:scale-95 group"
+            className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#081225]/90 hover:bg-[#0088FF] border border-white/30 text-white items-center justify-center transition-all duration-300 cursor-pointer shadow-xl hover:scale-110 active:scale-95 group"
           >
             <ChevronLeft className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" />
           </button>
@@ -213,7 +217,7 @@ export default function TechFeatures() {
           <button
             onClick={nextSlide}
             aria-label="Next card"
-            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#081225]/85 hover:bg-[#0088FF] border border-white/30 text-white items-center justify-center transition-all duration-300 cursor-pointer shadow-xl hover:scale-110 active:scale-95 group"
+            className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#081225]/90 hover:bg-[#0088FF] border border-white/30 text-white items-center justify-center transition-all duration-300 cursor-pointer shadow-xl hover:scale-110 active:scale-95 group"
           >
             <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
           </button>
@@ -225,17 +229,21 @@ export default function TechFeatures() {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            {/* Sliding Horizontal Track */}
+            {/* Sliding Horizontal Track with Explicit Mathematical Width */}
             <div
-              className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] w-full"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              style={{
+                width: `${total * 100}%`,
+                transform: `translateX(-${(currentIndex * 100) / total}%)`,
+              }}
             >
               {features.map((item) => {
                 const ItemIcon = item.icon;
                 return (
                   <div
                     key={item.id}
-                    className="w-full shrink-0 flex-none relative p-6 sm:p-8 lg:p-10 bg-[#081225]/70 backdrop-blur-2xl overflow-hidden"
+                    style={{ width: `${100 / total}%` }}
+                    className="shrink-0 flex-none relative p-6 sm:p-8 lg:p-10 bg-[#081225]/75 backdrop-blur-2xl overflow-hidden"
                   >
                     {/* Vertical Fluted / Ribbed Light Beams Texture */}
                     <div
@@ -348,7 +356,7 @@ export default function TechFeatures() {
             </div>
           </div>
 
-          {/* Carousel Navigation Footer: Interactive Dots & Mobile Arrow Controls */}
+          {/* Carousel Navigation Footer: Interactive Dots & Arrow Controls */}
           <div className="mt-6 sm:mt-8 flex items-center justify-between px-2">
             {/* Dots Indicator */}
             <div className="flex items-center gap-2">

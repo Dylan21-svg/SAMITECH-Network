@@ -71,12 +71,27 @@ export default function StatsStrip() {
         </div>
 
         {/* Marquee Carousel for Stats */}
-        <div className="relative overflow-hidden w-full group select-none">
+        <div className="relative overflow-hidden w-full select-none">
+          <style>{`
+            @keyframes statsMarquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .stats-track {
+              display: flex;
+              width: max-content;
+              animation: statsMarquee 22s linear infinite;
+            }
+            .stats-track:hover {
+              animation-play-state: paused;
+            }
+          `}</style>
+
           {/* Edge fade gradients for smooth carousel entrance and exit */}
           <div className="pointer-events-none absolute left-0 inset-y-0 w-8 sm:w-16 bg-gradient-to-r from-[#0E141F] to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 inset-y-0 w-8 sm:w-16 bg-gradient-to-l from-[#0E141F] to-transparent z-10" />
 
-          <div className="animate-marquee items-center gap-2.5 sm:gap-3.5 whitespace-nowrap py-0.5">
+          <div className="stats-track items-center gap-2.5 sm:gap-3.5 whitespace-nowrap py-0.5">
             {carouselStats.map((item, idx) => (
               <div
                 key={idx}
