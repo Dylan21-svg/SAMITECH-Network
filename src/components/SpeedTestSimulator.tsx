@@ -40,24 +40,24 @@ export default function SpeedTestSimulator() {
   };
 
   return (
-    <section className="relative z-10 py-10 sm:py-14 lg:py-20 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black">
-      <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 bg-white/[0.08] hover:bg-white/[0.13] border border-white/20 hover:border-white/35 backdrop-blur-xl shadow-2xl transition-all duration-300">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+    <section className="relative z-10 py-8 sm:py-10 lg:py-12 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black">
+      <div className="max-w-5xl mx-auto rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 bg-white/[0.08] hover:bg-white/[0.13] border border-white/20 hover:border-white/35 backdrop-blur-xl shadow-2xl transition-all duration-300">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
           
           {/* Left Info Column */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-3 sm:mb-4">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-2 sm:mb-3">
               <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#8b0000]" />
               <span className="text-[10px] sm:text-xs font-semibold text-[#8b0000] uppercase tracking-wider">
                 Live Starlink Benchmark
               </span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2 sm:mb-3">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight mb-2">
               Real-World Satellite Throughput
             </h3>
 
-            <p className="text-[11px] sm:text-xs lg:text-sm text-blue-200/90 leading-relaxed mb-4 sm:mb-6">
+            <p className="text-[11px] sm:text-xs lg:text-sm text-blue-200/90 leading-relaxed mb-3 sm:mb-5">
               Unlike congested cellular towers that crawl during evening rush hours,
               Samitech Networks delivers direct low-orbit beam connectivity with
               uncompromising gigabit-grade speed.

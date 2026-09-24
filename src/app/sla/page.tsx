@@ -20,16 +20,16 @@ export default function SLAPage() {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <main className="pt-24 sm:pt-28 pb-16">
-        <section className="px-3.5 sm:px-6 lg:px-12 py-10 sm:py-14 max-w-4xl mx-auto">
+      <main className="pt-20 sm:pt-24 pb-12">
+        <section className="px-3.5 sm:px-6 lg:px-12 py-6 sm:py-8 max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-white mb-4 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
 
-          <div className="rounded-3xl p-6 sm:p-10 lg:p-12 bg-white/[0.08] border border-white/20 backdrop-blur-xl shadow-2xl space-y-8">
+          <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 bg-white/[0.08] border border-white/20 backdrop-blur-xl shadow-2xl space-y-6">
             <div className="border-b border-white/15 pb-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold uppercase tracking-wider mb-3">
                 <Award className="w-3.5 h-3.5" /> Performance Guarantees

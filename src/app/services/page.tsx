@@ -135,29 +135,29 @@ export default function ServicesPage() {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <main className="pt-24 sm:pt-28 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12">
         {/* Header */}
-        <section className="px-3.5 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-xs font-semibold mb-4 sm:mb-6 uppercase tracking-wider">
+        <section className="px-3.5 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Turnkey Starlink Deployments</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4 max-w-4xl mx-auto">
             Engineered Satellite Solutions for{" "}
             <span className="text-[#0088FF]">Every Living Space</span>
             <span className="text-[#EF4444]">.</span>
           </h1>
 
-          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-6">
             From multi-story student hostels in Molyko to private development studios and corporate innovation hubs,
             Samitech delivers end-to-end installation, cabling, Wi-Fi 6 mesh distribution, and local support.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
             <button
               onClick={() => setContactOpen(true)}
-              className="px-6 sm:px-8 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 via-red-500 to-[#0088FF] hover:from-red-700 hover:to-blue-600 text-white shadow-lg shadow-red-600/30 transition-all cursor-pointer"
+              className="px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 via-red-500 to-[#0088FF] hover:from-red-700 hover:to-blue-600 text-white shadow-lg shadow-red-600/30 transition-all cursor-pointer"
             >
               Request an On-Site Survey
             </button>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
               href="https://wa.me/237674137259?text=Hello%20Samitech%20Networks,%20I%20would%20like%20to%20inquire%20about%20your%20Starlink%20installation%20services."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 sm:px-8 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all flex items-center gap-2"
+              className="px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all flex items-center gap-2"
             >
               <Phone className="w-4 h-4 text-emerald-400" />
               <span>Direct WhatsApp Desk</span>
@@ -174,15 +174,15 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid (Using the exact white glassmorphism, red and blue styling) */}
-        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-16 sm:mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 items-stretch">
+        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-10 sm:mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 items-stretch">
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
                 <div
                   id={svc.id}
                   key={svc.id}
-                  className={`scroll-mt-28 rounded-2xl sm:rounded-3xl p-6 sm:p-7 lg:p-8 flex flex-col justify-between transition-all duration-300 relative backdrop-blur-xl shadow-2xl ${
+                  className={`scroll-mt-28 rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 flex flex-col justify-between transition-all duration-300 relative backdrop-blur-xl shadow-2xl ${
                     svc.highlight
                       ? "bg-white/[0.14] hover:bg-white/[0.18] border-2 border-[#0088FF] shadow-[#0088FF]/20"
                       : "bg-white/[0.08] hover:bg-white/[0.13] border border-white/20 hover:border-white/35"

@@ -36,8 +36,8 @@ export default function Footer({ onOpenCoverage, onContactWhatsApp }: FooterProp
   };
 
   return (
-    <footer className="bg-black border-t border-white/10 pt-10 sm:pt-14 lg:pt-16 pb-28 md:pb-12 px-3.5 sm:px-6 lg:px-12 text-gray-400">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 sm:pb-10 lg:pb-12 border-b border-white/10">
+    <footer className="bg-black border-t border-white/10 pt-8 sm:pt-10 lg:pt-12 pb-24 md:pb-10 px-3.5 sm:px-6 lg:px-12 text-gray-400">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 pb-6 sm:pb-8 border-b border-white/10">
         
         {/* Col 1: Brand Info & Mission */}
         <div className="lg:col-span-4 space-y-4 sm:space-y-5">

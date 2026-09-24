@@ -62,23 +62,23 @@ export default function TechFeatures() {
   ];
 
   return (
-    <section id="features" className="relative z-10 py-10 sm:py-14 lg:py-20 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black">
+    <section id="features" className="relative z-10 py-8 sm:py-10 lg:py-14 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-3 sm:mb-4">
+        <div className="flex flex-col items-center text-center mb-6 sm:mb-8 lg:mb-10">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-2 sm:mb-3">
             <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#8b0000]" />
             <span className="text-[10px] sm:text-xs font-semibold text-[#8b0000] uppercase tracking-wider">
               Space-Age Architecture
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-2xl mb-2 sm:mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight max-w-2xl mb-1.5 sm:mb-2">
             Next-Generation Connectivity
           </h2>
 
-          <p className="text-xs sm:text-sm lg:text-base text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-400 max-w-xl leading-relaxed">
             Engineered by SpaceX, localized and deployed flawlessly across Cameroon by Samitech Networks.
           </p>
         </div>
