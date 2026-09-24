@@ -13,7 +13,6 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
-  ArrowRight,
 } from "lucide-react";
 
 interface FeatureItem {
@@ -33,7 +32,6 @@ interface FeatureItem {
 
 export default function TechFeatures() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
@@ -168,14 +166,13 @@ export default function TechFeatures() {
     setCurrentIndex(index);
   };
 
-  // Autoplay functionality
+  // Autoplay functionality: switches to next after 10 seconds
   useEffect(() => {
-    if (isPaused) return;
     const interval = setInterval(() => {
       nextSlide();
-    }, 6500);
+    }, 10000);
     return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
+  }, [nextSlide, currentIndex]);
 
   // Touch swipe support for mobile
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -206,8 +203,6 @@ export default function TechFeatures() {
     <section
       id="features"
       className="relative z-10 py-8 sm:py-10 lg:py-14 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 bg-black text-white selection:bg-[#0088FF]/30"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -252,36 +247,36 @@ export default function TechFeatures() {
 
         {/* Carousel Card Container */}
         <div
-          className="relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-9 bg-white/[0.08] hover:bg-white/[0.11] border border-white/20 backdrop-blur-xl shadow-2xl transition-all duration-300"
+          className="relative rounded-2xl sm:rounded-3xl p-5 sm:p-7 lg:p-9 bg-white/[0.08] hover:bg-white/[0.11] border border-white/20 backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Active Feature Slide Grid: Text on one side, Image on the other side */}
+          {/* Subtle 10-Second Timer Progress Bar along the top border */}
+          <div className="absolute top-0 inset-x-0 h-1 bg-white/10 overflow-hidden">
+            <div
+              key={currentIndex}
+              className="h-full bg-gradient-to-r from-red-600 via-[#0088FF] to-blue-400 animate-tech-progress origin-left"
+            />
+          </div>
+
+          {/* Active Feature Slide Grid: Text on the left, Image on the right */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             
             {/* Left Side: Text Description & Technical Details */}
-            <div className="lg:col-span-6 flex flex-col justify-between order-2 lg:order-1">
+            <div className="lg:col-span-6 flex flex-col justify-between order-1">
               <div>
-                {/* Badge & Spec Row */}
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3 sm:mb-4">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`text-[10px] sm:text-[11px] font-bold px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full uppercase tracking-wider ${
-                        current.highlight
-                          ? "bg-[#0088FF] text-white shadow-md shadow-blue-500/25"
-                          : "bg-red-500/20 text-red-400 border border-red-500/30"
-                      }`}
-                    >
-                      {current.badge}
-                    </span>
-                  </div>
-
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/15 text-[10px] sm:text-xs font-semibold text-gray-300">
-                    <span className="text-[#0088FF] font-bold">0{currentIndex + 1}</span>
-                    <span className="text-gray-500">/</span>
-                    <span>0{totalFeatures}</span>
-                  </div>
+                {/* Badge Row (Card Number indicator removed) */}
+                <div className="flex items-center mb-3 sm:mb-4">
+                  <span
+                    className={`text-[10px] sm:text-[11px] font-bold px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full uppercase tracking-wider ${
+                      current.highlight
+                        ? "bg-[#0088FF] text-white shadow-md shadow-blue-500/25"
+                        : "bg-red-500/20 text-red-400 border border-red-500/30"
+                    }`}
+                  >
+                    {current.badge}
+                  </span>
                 </div>
 
                 {/* Subtitle & Title */}
@@ -331,7 +326,7 @@ export default function TechFeatures() {
             </div>
 
             {/* Right Side: Image Representation */}
-            <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="lg:col-span-6 order-2">
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-black/50 border border-white/20 shadow-2xl flex items-center justify-center p-3 sm:p-5 group">
                 
                 {/* Subtle Ambient Radial Glow */}
