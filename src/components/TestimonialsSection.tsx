@@ -9,7 +9,7 @@ export default function TestimonialsSection() {
   return (
     <section
       id="about"
-      className="relative z-10 py-12 sm:py-16 lg:py-24 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 overflow-hidden isolate"
+      className="relative z-10 py-8 sm:py-10 lg:py-14 px-3.5 sm:px-6 lg:px-12 scroll-mt-24 overflow-hidden isolate"
     >
       {/* Background Image: Starlink Dish & Retail Packaging - Full Brightness */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
@@ -22,26 +22,26 @@ export default function TestimonialsSection() {
           priority
         />
         {/* Soft edge gradients to seamlessly blend into neighboring sections */}
-        <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black via-black/40 to-transparent" />
-        <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black via-black/40 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black via-black/40 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-black/60 border border-white/20 backdrop-blur-xl shadow-lg mb-3 sm:mb-4">
+        <div className="flex flex-col items-center text-center mb-6 sm:mb-8 lg:mb-10">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 backdrop-blur-xl shadow-lg mb-2 sm:mb-3">
             <span className="text-[10px] sm:text-xs font-bold text-[#0088FF] uppercase tracking-wider">
               Verified Social Proof
             </span>
           </div>
 
-          <div className="px-5 py-3 sm:py-4 rounded-2xl sm:rounded-3xl bg-black/60 backdrop-blur-2xl border border-white/20 shadow-2xl max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-2 sm:mb-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          <div className="px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/20 shadow-2xl max-w-xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-1.5 sm:mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Trusted By Hostels &amp; Residents
             </h2>
 
-            <p className="text-xs sm:text-sm lg:text-base text-gray-100 max-w-xl mx-auto leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+            <p className="text-xs sm:text-sm text-gray-100 max-w-lg mx-auto leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               See how Samitech Networks Starlink installations transformed daily student
               research, remote tech jobs, and family streaming.
             </p>

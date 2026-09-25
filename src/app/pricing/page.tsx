@@ -34,21 +34,21 @@ export default function PricingPage() {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <main className="pt-24 sm:pt-28 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12">
         {/* Header */}
-        <section className="px-3.5 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-xs font-semibold mb-4 sm:mb-6 uppercase tracking-wider">
+        <section className="px-3.5 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Zero Hidden Fees · Transparent Pricing</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4 max-w-4xl mx-auto">
             Affordable Gigabit Satellite Plans for{" "}
             <span className="text-[#0088FF]">Cameroon</span>
             <span className="text-red-500">.</span>
           </h1>
 
-          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-6">
             Whether you&apos;re an entire hostel splitting costs across 30 rooms, a private resident in a single studio,
             or an apartment complex, we provide tailored packages with local Mobile Money payment flexibility.
           </p>
@@ -63,8 +63,8 @@ export default function PricingPage() {
         />
 
         {/* Interactive Split Billing Student Calculator */}
-        <section className="px-3.5 sm:px-6 lg:px-12 max-w-5xl mx-auto my-16 sm:my-24">
-          <div className="rounded-3xl p-6 sm:p-10 lg:p-12 bg-white/[0.08] hover:bg-white/[0.12] border border-white/20 backdrop-blur-xl shadow-2xl transition-all">
+        <section className="px-3.5 sm:px-6 lg:px-12 max-w-5xl mx-auto my-10 sm:my-14">
+          <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 bg-white/[0.08] hover:bg-white/[0.12] border border-white/20 backdrop-blur-xl shadow-2xl transition-all">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/15">
               <div>
                 <div className="inline-flex items-center gap-2 text-xs font-bold text-red-500 uppercase tracking-widest mb-1">

@@ -60,36 +60,36 @@ export default function AboutPage() {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <main className="pt-24 sm:pt-28 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12">
         {/* Hero Section */}
-        <section className="relative px-3.5 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-24 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-xs font-semibold mb-4 sm:mb-6 uppercase tracking-wider">
+        <section className="relative px-3.5 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-14 max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Samitech Mission</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 sm:mb-6 max-w-4xl mx-auto leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4 max-w-4xl mx-auto leading-tight">
             Pioneering Low-Earth Orbit Satellite Connectivity in{" "}
             <span className="text-[#0088FF]">Cameroon</span>
             <span className="text-[#EF4444]">.</span>
           </h1>
 
-          <p className="text-sm sm:text-base lg:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-6">
             Born in Buea (&quot;Silicon Mountain&quot;), Samitech Networks bridges the gap between SpaceX Starlink&apos;s
             cutting-edge satellite constellation and the real-world connectivity challenges faced by student hostels,
             remote studios, and modern apartments.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
             <button
               onClick={() => setContactOpen(true)}
-              className="px-6 sm:px-8 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 via-red-500 to-[#0088FF] hover:from-red-700 hover:to-blue-600 text-white shadow-lg shadow-red-600/30 transition-all cursor-pointer"
+              className="px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-red-600 via-red-500 to-[#0088FF] hover:from-red-700 hover:to-blue-600 text-white shadow-lg shadow-red-600/30 transition-all cursor-pointer"
             >
               Consult With Our Engineers
             </button>
             <button
               onClick={() => setCoverageOpen(true)}
-              className="px-6 sm:px-8 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all cursor-pointer"
+              className="px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all cursor-pointer"
             >
               Verify Campus Coverage
             </button>
@@ -97,14 +97,14 @@ export default function AboutPage() {
         </section>
 
         {/* Impact Numbers Grid */}
-        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-16 sm:mb-24">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-10 sm:mb-14">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {milestones.map((m, idx) => (
               <div
                 key={idx}
-                className="p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/[0.08] border border-white/20 hover:border-white/35 backdrop-blur-xl shadow-2xl transition-all"
+                className="p-4 sm:p-5 rounded-2xl bg-white/[0.08] border border-white/20 hover:border-white/35 backdrop-blur-xl shadow-2xl transition-all"
               >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0088FF] mb-1">
+                <div className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0088FF] mb-1">
                   {m.value}
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-red-500 mb-1">
@@ -119,8 +119,8 @@ export default function AboutPage() {
         </section>
 
         {/* Our Story & Why Samitech */}
-        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-16 sm:mb-24">
-          <div className="rounded-3xl p-6 sm:p-10 lg:p-14 bg-white/[0.08] border border-white/20 backdrop-blur-xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <section className="px-3.5 sm:px-6 lg:px-12 max-w-7xl mx-auto mb-10 sm:mb-14">
+          <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 bg-white/[0.08] border border-white/20 backdrop-blur-xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             
             <div className="lg:col-span-6 space-y-4 sm:space-y-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold uppercase tracking-wider">

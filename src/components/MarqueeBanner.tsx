@@ -15,12 +15,27 @@ export default function MarqueeBanner() {
     { text: "24/7 TECHNICAL HOTLINE IN CAMEROON", icon: Zap },
   ];
 
-  // Repeat twice for seamless infinite marquee loop
-  const displayItems = [...items, ...items];
+  // Repeat for seamless infinite marquee loop
+  const displayItems = [...items, ...items, ...items];
 
   return (
     <div className="relative z-20 w-full overflow-hidden bg-[#8b0000] text-white py-2.5 sm:py-3.5 lg:py-4 border-y border-black/20 shadow-[0_4px_25px_rgba(139,0,0,0.4)] select-none">
-      <div className="animate-marquee items-center gap-6 sm:gap-8 whitespace-nowrap">
+      <style>{`
+        @keyframes bannerMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.33333%); }
+        }
+        .banner-track {
+          display: flex;
+          width: max-content;
+          animation: bannerMarquee 26s linear infinite;
+        }
+        .banner-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div className="banner-track items-center gap-6 sm:gap-8 whitespace-nowrap">
         {displayItems.map((item, idx) => {
           const Icon = item.icon;
           return (

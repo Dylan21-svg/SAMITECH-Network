@@ -71,7 +71,6 @@ const features: TechFeatureItem[] = [
   },
 ];
 
-// 8-Point Asterisk Icon matching reference design
 function LuminousAsterisk({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -92,16 +91,15 @@ export default function TechFeatures() {
     setActiveIndex((prev) => (prev - 1 + features.length) % features.length);
   }, []);
 
-  // 10-second automatic carousel transition
+  // Auto‑advance every 10 seconds
   useEffect(() => {
     if (isPaused) return;
 
     const timer = setInterval(() => {
       handleNext();
     }, 10000);
-
     return () => clearInterval(timer);
-  }, [isPaused, handleNext, activeIndex]);
+  }, [isPaused, handleNext]);
 
   const current = features[activeIndex];
 
@@ -116,41 +114,34 @@ export default function TechFeatures() {
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 mb-3 sm:mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#ff4444]" />
             <span className="text-[10px] sm:text-xs font-semibold text-red-400 uppercase tracking-wider">
-              Space-Age Architecture
+              Next‑Generation Connectivity
             </span>
           </div>
-
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight max-w-2xl mb-2 sm:mb-3">
-            Next-Generation Connectivity
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-2xl mb-2 sm:mb-3">
+            Next‑Generation Connectivity
           </h2>
-
-          <p className="text-xs sm:text-sm lg:text-base text-gray-400 max-w-xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-400 max-w-xl leading-relaxed">
             Engineered by SpaceX, localized and deployed flawlessly across Cameroon by Samitech Networks.
           </p>
         </div>
 
         {/* Luminous Glassmorphic Carousel Card */}
-        <div
-          className="luminous-glass-card rounded-[28px] sm:rounded-[36px] p-6 sm:p-9 lg:p-12 relative overflow-hidden transition-all duration-500 group shadow-2xl"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Vertical flutes and luminous light streaks from reference image */}
+        <div className="luminous-glass-card rounded-[28px] sm:rounded-[36px] p-6 sm:p-9 lg:p-12 relative overflow-hidden transition-all duration-500 group shadow-2xl" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+          {/* Flutes & Aurora */}
           <div className="luminous-flutes" />
           <div className="luminous-aurora" />
 
-          {/* Top Row: Oval outline pill badge on left & 8-point Asterisk on right */}
+          {/* Top Row */}
           <div className="relative z-10 flex items-center justify-between mb-6 sm:mb-8">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/35 bg-white/[0.04] text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-white/95 uppercase backdrop-blur-md shadow-sm">
               {current.badge}
             </div>
-
             <div className="text-white drop-shadow-[0_0_14px_rgba(255,255,255,0.7)] hover:rotate-45 transition-transform duration-500">
               <LuminousAsterisk className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
           </div>
 
-          {/* Animated Carousel Slide Content */}
+          {/* Animated Content */}
           <div className="relative z-10 min-h-[380px] sm:min-h-[420px] lg:min-h-[440px] flex items-center">
             <AnimatePresence mode="wait">
               <motion.div
@@ -161,9 +152,8 @@ export default function TechFeatures() {
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
               >
-                {/* Left Side: Text description */}
+                {/* Left Side – Text */}
                 <div className="lg:col-span-7 flex flex-col justify-center space-y-4 sm:space-y-6">
-                  {/* Pills row (like FULLY EDITABLE / CREATIVE PACK / ULTRA HD in reference) */}
                   <div className="flex flex-wrap gap-2">
                     {current.tags.map((tag, idx) => (
                       <span
@@ -174,18 +164,12 @@ export default function TechFeatures() {
                       </span>
                     ))}
                   </div>
-
-                  {/* Bold Punchy Title (like LUMINOUS GRADIENT in reference image) */}
                   <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-black text-white tracking-tight uppercase leading-[1.08] drop-shadow-md">
                     {current.title}
                   </h3>
-
-                  {/* High clarity description */}
                   <p className="text-xs sm:text-sm lg:text-base text-blue-100/85 leading-relaxed max-w-xl font-normal">
                     {current.description}
                   </p>
-
-                  {/* Key Standard Spec Badge */}
                   <div className="pt-2 flex items-center gap-3">
                     <span className="text-[11px] sm:text-xs text-blue-200/70 uppercase tracking-widest font-mono">
                       Standard Spec:
@@ -196,13 +180,11 @@ export default function TechFeatures() {
                   </div>
                 </div>
 
-                {/* Right Side: Image representation */}
+                {/* Right Side – Image */}
                 <div className="lg:col-span-5 flex items-center justify-center">
                   <div className="relative w-full max-w-[340px] sm:max-w-[400px] lg:max-w-none h-[240px] sm:h-[300px] lg:h-[360px] rounded-2xl sm:rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-xl p-4 sm:p-6 flex items-center justify-center shadow-inner overflow-hidden group/img">
-                    {/* Glowing backlight behind image */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 via-cyan-400/15 to-transparent opacity-80" />
                     <div className="absolute w-44 h-44 bg-cyan-400/25 rounded-full blur-[60px] pointer-events-none" />
-
                     <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden flex items-center justify-center">
                       <Image
                         src={current.image}
@@ -220,7 +202,7 @@ export default function TechFeatures() {
             </AnimatePresence>
           </div>
 
-          {/* Minimal Controls (Left & Right arrows for manual switching, NO count or card indicators) */}
+          {/* Controls */}
           <div className="relative z-10 flex items-center justify-end gap-3 mt-6 sm:mt-8 pt-4 border-t border-white/10">
             <button
               onClick={handlePrev}
@@ -229,7 +211,6 @@ export default function TechFeatures() {
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-
             <button
               onClick={handleNext}
               aria-label="Next slide"

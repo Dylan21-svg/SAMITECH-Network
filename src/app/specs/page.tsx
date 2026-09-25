@@ -69,20 +69,20 @@ export default function TechSpecsPage() {
         onOpenContact={() => setContactOpen(true)}
       />
 
-      <main className="pt-24 sm:pt-28 pb-16">
+      <main className="pt-20 sm:pt-24 pb-12">
         {/* Header */}
-        <section className="px-3.5 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-xs font-semibold mb-4 sm:mb-6 uppercase tracking-wider">
+        <section className="px-3.5 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12 max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8b0000]/15 border border-[#8b0000]/30 text-[#8b0000] text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Certified Hardware Datasheet</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 sm:mb-6 max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4 max-w-4xl mx-auto">
             SpaceX Starlink <span className="text-[#0088FF]">Technical Specifications</span>
             <span className="text-red-500">.</span>
           </h1>
 
-          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-xs sm:text-sm lg:text-base text-blue-100 max-w-2xl mx-auto leading-relaxed mb-6">
             Complete architectural, environmental, radio frequency, and power parameters for our Cameroon terminal and mesh deployments.
           </p>
 

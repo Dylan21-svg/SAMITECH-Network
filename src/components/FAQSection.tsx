@@ -56,7 +56,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="relative z-10 py-12 sm:py-16 lg:py-24 px-3.5 sm:px-6 lg:px-12 bg-black text-white border-y border-white/10 scroll-mt-24">
+    <section id="faq" className="relative z-10 py-8 sm:py-10 lg:py-14 px-3.5 sm:px-6 lg:px-12 bg-black text-white border-y border-white/10 scroll-mt-24">
       {/* Subtle ambient lighting for depth */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -64,8 +64,8 @@ export default function FAQSection() {
       <div className="relative max-w-4xl mx-auto">
         
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-md shadow-inner mb-3 sm:mb-4">
+        <div className="flex flex-col items-center text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/15 backdrop-blur-md shadow-inner mb-2 sm:mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-[#38BDF8]" />
             <span className="text-[11px] sm:text-xs font-bold text-emerald-400 uppercase tracking-wider">
               Clear & Transparent Answers
@@ -73,14 +73,14 @@ export default function FAQSection() {
             <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight max-w-xl mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white tracking-tight max-w-xl mb-2">
             Frequently Asked{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0088FF] to-[#38BDF8]">
               Questions
             </span>
             <span className="text-red-500">.</span>
           </h2>
-          <p className="text-xs sm:text-sm lg:text-base text-gray-300 max-w-lg leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm text-gray-300 max-w-lg leading-relaxed font-normal">
             Everything you need to know about <strong className="text-white">Starlink hardware</strong>, installation timelines, and shared student hostel connectivity in Cameroon.
           </p>
         </div>
