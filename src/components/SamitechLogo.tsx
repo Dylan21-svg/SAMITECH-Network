@@ -14,19 +14,20 @@ export default function SamitechLogo({
   size = "md",
 }: SamitechLogoProps) {
   const heightClasses = {
-    sm: "h-7 sm:h-8",
-    md: "h-8 sm:h-9 lg:h-10",
-    lg: "h-10 sm:h-12 lg:h-14",
+    sm: "h-8 sm:h-9",
+    md: "h-9 sm:h-10 lg:h-11",
+    lg: "h-11 sm:h-12 lg:h-14",
   };
 
   return (
     <div className={`relative flex items-center shrink-0 ${heightClasses[size]} ${className}`}>
       <Image
-        src="/images/netlogo.png"
+        src="/images/samitech-logo.png"
         alt="Samitech Networks - Connecting The Future"
-        width={320}
-        height={120}
+        width={380}
+        height={130}
         priority
+        unoptimized
         className="h-full w-auto object-contain select-none"
       />
     </div>
